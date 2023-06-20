@@ -6,11 +6,11 @@ from mmtrack.apis import inference_mot, init_model
 import os
 
 mot_config = './configs/mot/ocsort/ocsort_yolox_x_crowdhuman_mot17-private-half.py'
-input_folder = './data/DNP/video/'
+input_folder = './data/DNP_test2/video/'
 checkpoint = './checkpoints/ocsort_yolox_x_crowdhuman_mot17-private-half_20220813_101618-fe150582.pth'
 mot_model = init_model(mot_config, checkpoint, device='cuda:0')
-out_dir = tempfile.TemporaryDirectory()
-out_path = out_dir.name
+# out_dir = tempfile.TemporaryDirectory()
+# out_path = out_dir.name
 pred_folder = "./output/pred"
 for input_video in os.listdir(input_folder):
         print("--------------Processing " + input_video)
